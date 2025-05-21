@@ -3,6 +3,7 @@ site_url: https://sitename.example
 
 theme:
   name: material
+  custom_dir: docs/overrides
   
   font:
     text: "Merriweather Sans"
@@ -60,14 +61,18 @@ markdown_extensions:
 extra_javascript:
   - assets/scripts/rename-nav-headings.js
 
+extra_css:
+  - assets/styles/extra.css
+
+
 extra:
   social:
     - icon: fontawesome/brands/x-twitter
-      link: https://x.com/satmojoe
+      link: https://twitter.com/TheGuySwann
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/watch?v=YtFOxNbmD38
     - icon: fontawesome/brands/linkedin
-      link: https://uk.linkedin.com/in/joe-bryan-
+      link: https://theuselessweb.com/
 
 copyright: Copyright &copy; 2025 Joe
 

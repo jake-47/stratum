@@ -12,4 +12,47 @@
   font-display: swap;
 }
 
+/* Make top-level navigation sections more prominent with subtle styling */
+.md-nav--primary > .md-nav__list > .md-nav__item {
+  padding-bottom: 0.6rem;  /* Space below each section's content */
+  margin-bottom: 0.6rem;   /* Space after the divider */
+  border-bottom: 1px solid rgba(var(--md-default-fg-color--lightest-rgb), 0.12);  /* Extremely subtle divider */
+  position: relative;      /* For positioning the marker */
+}
 
+/* Add subtle vertical markers for top-level items */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  position: relative;      /* For the marker positioning */
+  padding-left: 0.7rem;    /* Make space for the marker */
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;             /* Vertical centering */
+  bottom: 0.2rem;
+  width: 2px;              /* Very thin line */
+  background-color: var(--md-primary-fg-color);
+  opacity: 0.3;            /* Very subtle */
+  border-radius: 1px;
+}
+
+/* Keep the original alignment for the first item */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  margin-top: 0;  /* Reset any spacing that might affect the first item */
+}
+
+/* Remove divider from last item */
+.md-nav--primary > .md-nav__list > .md-nav__item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Match indentation in the right navigation (TOC) */
+.md-sidebar--secondary .md-nav__link {
+  padding-left: 0.7rem;  /* Same indentation as left nav */
+  position: relative;    /* For potential marker */
+  margin-left: 2px;      /* Slight offset to align with left nav */
+}
