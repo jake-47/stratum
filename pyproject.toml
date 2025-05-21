@@ -1,0 +1,20 @@
+[project]
+name = "my-docs"
+version = "0.1.0"
+description = "Documentation project using MkDocs Material"
+requires-python = ">=3.8"
+
+dependencies = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocs-minify-plugin",
+    "pymdown-extensions",
+    "mike",
+    "mkdocs-glightbox",
+    "mkdocs-localsearch",
+    "mkdocs-macros-plugin"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
