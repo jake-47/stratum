@@ -1,12 +1,23 @@
 # Stratum
 >A multi-audience documentation framework for a single source of truth
 
-Stratum is built on MkDocs with the Material for MkDocs theme. It lets you serve multiple audiences—internal teams, partners, beta users, and the public—from one unified documentation base.
+Stratum is built on [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme. There isn't much of difference an aesthetic upgrade, but It lets you serve multiple audiences—internal teams, partners, beta users, and the public—from one unified documentation base.
 
-Instead of duplicating files or running multiple sites, Stratum uses audience tags and conditional macros to selectively render content at build time. Writers work in Markdown. Visibility is determined by config and logic—not by duplication.
+|Audience|Can See Content Marked As|
+|---|---|
+|**Internal**| **everything**: default (public), partner, beta, internal |
+|**Partner**|partner only|
+|**Beta**|beta only|
+|**Public**|default content with no `audiences:` frontmatter (i.e. untagged)|
 
-It’s a way of saying:
-**“We care who is reading, but we don’t want five versions of the truth.”**
+- **Internal teams need full visibility** to support partners, test beta features, and manage docs.
+- **Partners and beta users must only see their authorized content**—which is your current behaviour.
+- **Public users should only see untagged general documentation**, to avoid leaks or confusion.
+- It ensures **audiences only expand access downward**, not upward.
+
+Instead of duplicating files or running multiple sites, Stratum uses audience tags and conditional macros to selectively render content at build time. Writers work in Markdown. Visibility is determined by config and logic—not by duplication. Stratum moves away from multiple content trees. That’s its real advantage.
+
+It’s a way of saying: **“We care about who's reading, but we don’t want five versions of the truth.”**
 
 ## Core strengths
 - One set of Markdown files, many tailored outputs
