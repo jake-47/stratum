@@ -8,8 +8,6 @@ Instead of duplicating files or running multiple sites, Stratum uses audience ta
 It’s a way of saying:
 **“We care who is reading, but we don’t want five versions of the truth.”**
 
----
-
 ## Core strengths
 - One set of Markdown files, many tailored outputs
 - Granular access control per block, section, or page
@@ -18,8 +16,6 @@ It’s a way of saying:
 - Scalable architecture that’s easy to onboard and maintain
 
 Stratum is ideal for teams who need clarity, maintainability, and layered access without sacrificing writing simplicity.
-
----
 
 ## Philosophy
 At its core, Stratum is committed to **minimal forking, maximum reuse**. Writers work in a unified Markdown corpus, embedding audience-specific content using simple, declarative logic. A developer building a CLI guide and a designer writing integration tips don’t need to worry about which file to use—there’s only one. The system handles visibility **surgically** at render time.
@@ -50,10 +46,8 @@ There is no need for non-technical contributors to learn Python or manipulate co
 7. **Operational Sustainability**
    Stratum’s architecture is designed for long-term maintainability. Updates are made once. Builds are automated. Docs stay in sync.
 
----
-
 ## Motivation
-I'm not a dev. I'm not a designer. I'm a technical writer, a documentation specialist, if you will. It would've been nice if there was a ready-made solution out there, but I couldn't find any framework or theme that fully supports multi-audience conditional builds with macro logic, config generators, and styled content wrappers. Companies like Google or Stripe build similar frameworks _in-house_ on top of static site generators (SSGs) like Docusaurus, Hugo, Sphinx, Next.js** (with custom MDX pipelines).  Stratum keeps you within MkDocs (fast, Markdown-native, great for non-devs), but doesn’t require multiple content trees. That’s its real advantage. So I used ChatGPT (OpenAI) and Claude (Anthropic) to build this. It wasn't all fun: https://x.com/litteralyme0_/status/1925478490381722084
+I'm not a dev. I'm not a designer. I'm a technical writer, a documentation specialist, if you will. It would've been nice if there was a ready-made solution out there, but I couldn't find any framework or theme that fully supports multi-audience conditional builds with macro logic, config generators, and styled content wrappers. Companies like Google or Stripe build similar frameworks _in-house_ on top of static site generators (SSGs) like Docusaurus, Hugo, Sphinx, Next.js** (with custom MDX pipelines).  Stratum keeps you within MkDocs (fast, Markdown-native, great for non-devs), but doesn’t require multiple content trees. That’s its real advantage. So I used ChatGPT (OpenAI) and Claude (Anthropic) to build this. It [wasn't all fun](https://raw.githubusercontent.com/jake-47/stratum/main/assets/ai.mp4)!
 
 But man, *techmology*! 
 
