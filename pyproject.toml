@@ -12,9 +12,16 @@ dependencies = [
     "mike",
     "mkdocs-glightbox",
     "mkdocs-localsearch",
-    "mkdocs-macros-plugin"
+    "mkdocs-macros-plugin",
+    "pyyaml"
 ]
 
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []  # Don't auto-discover Python modules
+
+[tool.setuptools.packages]
+find = {}  # Don't auto-discover packages

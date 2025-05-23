@@ -1,4 +1,4 @@
-site_name: Knowledge Base
+site_name: Stratum Knowledge Base
 site_url: https://sitename.example
 
 theme:
@@ -9,9 +9,8 @@ theme:
     text: "Merriweather Sans"
     code: "Red Hat Mono"
 
-
-  #logo: assets/logo.svg
-  #favicon: assets/favicon.svg
+  logo: assets/logo-light.svg
+  favicon: assets/favicon.svg
   
   features:
     - navigation.footer
@@ -46,11 +45,6 @@ theme:
     accent: "deep orange"
 
 markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - attr_list
   - md_in_html
   - toc:
@@ -64,8 +58,17 @@ extra_javascript:
 extra_css:
   - assets/styles/extra.css
 
+plugins:
+  - search
+  - macros
 
 extra:
+  audience_internal: false
+  audience_partner: false
+  audience_beta: false
+
+  audiences: [internal, partner, beta]
+
   social:
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/TheGuySwann
@@ -74,10 +77,12 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://theuselessweb.com/
 
-copyright: Copyright &copy; 2025 Joe
+copyright: Copyright &copy; 2025 Jake Sully
 
 nav:
   - Introduction: index.md
+  - Examples:
+    - Audience Examples: examples/audience-examples.md
   - Reference Guide:
     - Overview: reference-guide/overview.md
     - API: reference-guide/api.md

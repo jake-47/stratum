@@ -12,6 +12,42 @@
   font-display: swap;
 }
 
+/* ==========================================================================
+   CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* Base audience colors */
+  --audience-internal: #9c27b0;
+  --audience-partner: #2196f3;
+  --audience-beta: #ff9800;
+  --audience-public: #4caf50;
+  
+  /* Internal color shades */
+  --audience-internal-bg: rgba(156, 39, 176, 0.05);
+  --audience-internal-bg-strong: rgba(156, 39, 176, 0.1);
+  --audience-internal-bg-dark: rgba(156, 39, 176, 0.15);
+  
+  /* Partner color shades */
+  --audience-partner-bg: rgba(33, 150, 243, 0.05);
+  --audience-partner-bg-strong: rgba(33, 150, 243, 0.1);
+  --audience-partner-bg-dark: rgba(33, 150, 243, 0.15);
+  
+  /* Beta color shades */
+  --audience-beta-bg: rgba(255, 152, 0, 0.05);
+  --audience-beta-bg-strong: rgba(255, 152, 0, 0.1);
+  --audience-beta-bg-dark: rgba(255, 152, 0, 0.15);
+  
+  /* Public color shades */
+  --audience-public-bg: rgba(76, 175, 80, 0.05);
+  --audience-public-bg-strong: rgba(76, 175, 80, 0.1);
+  --audience-public-bg-dark: rgba(76, 175, 80, 0.15);
+}
+
+/* ==========================================================================
+   Navigation Styling
+   ========================================================================== */
+
 /* Make top-level navigation sections more prominent with subtle styling */
 .md-nav--primary > .md-nav__list > .md-nav__item {
   padding-bottom: 0.6rem;  /* Space below each section's content */
@@ -55,4 +91,171 @@
   padding-left: 0.7rem;  /* Same indentation as left nav */
   position: relative;    /* For potential marker */
   margin-left: 2px;      /* Slight offset to align with left nav */
+}
+
+/* ==========================================================================
+   Site Header Audience Badges
+   ========================================================================== */
+
+/* Audience badges for site header (next to site title) */
+.audience-badge {
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.audience-badge--internal { 
+  color: var(--audience-internal);
+}
+
+.audience-badge--partner { 
+  color: var(--audience-partner);
+}
+
+.audience-badge--beta { 
+  color: var(--audience-beta);
+}
+
+.audience-badge--public { 
+  color: var(--audience-public);
+  /* Not used in templates currently, but defined for consistency */
+}
+
+/* ==========================================================================
+   Content Audience Badges (for audience_label filter)
+   ========================================================================== */
+
+/* Small badges for use within content */
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.badge--internal {
+  background: var(--audience-internal);
+  color: white;
+}
+
+.badge--partner {
+  background: var(--audience-partner);
+  color: white;
+}
+
+.badge--beta {
+  background: var(--audience-beta);
+  color: white;
+}
+
+.badge--public {
+  background: var(--audience-public);
+  color: white;
+  /* Available for future use */
+}
+
+/* ==========================================================================
+   Audience Content Blocks (for audience_content filter)
+   ========================================================================== */
+
+/* Content blocks that preserve markdown formatting */
+.audience-content {
+  border-left: 4px solid;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 0 4px 4px 0;
+}
+
+.audience-content--internal {
+  border-left-color: var(--audience-internal);
+  background-color: var(--audience-internal-bg);
+}
+
+.audience-content--partner {
+  border-left-color: var(--audience-partner);
+  background-color: var(--audience-partner-bg);
+}
+
+.audience-content--beta {
+  border-left-color: var(--audience-beta);
+  background-color: var(--audience-beta-bg);
+}
+
+.audience-content--public {
+  border-left-color: var(--audience-public);
+  background-color: var(--audience-public-bg);
+  /* Available for future use */
+}
+
+/* Ensure lists in audience content are properly formatted */
+.audience-content ul,
+.audience-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.audience-content li {
+  margin: 0.25rem 0;
+}
+
+/* Dark mode compatibility for audience content */
+[data-md-color-scheme="slate"] .audience-content {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .audience-content--internal {
+  background-color: var(--audience-internal-bg-dark);
+}
+
+[data-md-color-scheme="slate"] .audience-content--partner {
+  background-color: var(--audience-partner-bg-dark);
+}
+
+[data-md-color-scheme="slate"] .audience-content--beta {
+  background-color: var(--audience-beta-bg-dark);
+}
+
+[data-md-color-scheme="slate"] .audience-content--public {
+  background-color: var(--audience-public-bg-dark);
+}
+
+/* ==========================================================================
+   Audience-Specific Admonitions (semantic approach)
+   ========================================================================== */
+
+/* Internal admonition */
+.admonition.internal {
+  border-left-color: var(--audience-internal);
+}
+.admonition.internal .admonition-title {
+  background-color: var(--audience-internal-bg-strong);
+}
+
+/* Partner admonition */
+.admonition.partner {
+  border-left-color: var(--audience-partner);
+}
+.admonition.partner .admonition-title {
+  background-color: var(--audience-partner-bg-strong);
+}
+
+/* Beta admonition */
+.admonition.beta {
+  border-left-color: var(--audience-beta);
+}
+.admonition.beta .admonition-title {
+  background-color: var(--audience-beta-bg-strong);
+}
+
+/* Public admonition (for future use) */
+.admonition.public {
+  border-left-color: var(--audience-public);
+}
+.admonition.public .admonition-title {
+  background-color: var(--audience-public-bg-strong);
 }

@@ -1,5 +1,42 @@
 
+---
+title: Advanced Deployment Options
+audience: internal
+---
+
 # Examples
+
+### Advanced Deployment Options
+
+This entire page is for internal use only.
+
+{{ if page_for_audience('internal') }}
+This content appears because the page metadata matches.
+{{ endif }}
+
+### Audience Filter Usage
+
+```markdown
+{{ "This content appears only in internal builds. 
+   
+It can span multiple paragraphs and 
+- Include lists
+- And other **formatting**" | audience_content("internal") }}
+```
+### Basic Audience-Specific Content
+Standard authentication information here.
+
+{{ if is_internal() }}
+!!! internal "Internal only"
+    Secret API keys for internal testing: `INT-1234-ABCD-5678`
+{{ endif }}
+
+{{ if is_partner() }}
+!!! partner "Partner only"
+    Request your production API keys at partner.example.com
+{{ endif }}
+
+
 ## Sequence Diagrams
 
 ```mermaid
