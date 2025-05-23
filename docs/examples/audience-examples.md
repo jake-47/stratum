@@ -25,9 +25,8 @@ mkdocs serve --open
 This section is always visible and forms the baseline documentation for everyone.
 
 ## Internal Audience
-
-{% if is\_internal() %}
-!!! internal "{{ 'internal' | audience\_label }} Development Notes"
+{% if is_internal() %}
+!!! internal "{{ 'internal' | audience_label }} Development Notes"
 \- Internal API: `https://api-internal.company.com`
 \- Debug mode: `DEBUG_MODE=true`
 \- Staging: `https://staging.internal.company.com`
@@ -36,8 +35,8 @@ This section is always visible and forms the baseline documentation for everyone
 
 ## Partner Audience
 
-{% if is\_partner() %}
-!!! partner "{{ 'partner' | audience\_label }} Partner Resources"
+{% if is_partner() %}
+!!! partner "{{ 'partner' | audience_label }} Partner Resources"
 \- Portal: `https://partners.company.com`
 \- API Rate: 10,000 req/hr
 \- SLA: 24-hour response via [partners@company.com](mailto:partners@company.com)
@@ -46,8 +45,8 @@ This section is always visible and forms the baseline documentation for everyone
 
 ## Beta Audience
 
-{% if is\_beta() %}
-!!! beta "{{ 'beta' | audience\_label }} Beta Access"
+{% if is_beta() %}
+!!! beta "{{ 'beta' | audience_label }} Beta Access"
 \- Beta Dashboard (v2.1)
 \- AI content suggestions
 \- Weekly beta call: Fridays 2PM PST
@@ -56,7 +55,7 @@ This section is always visible and forms the baseline documentation for everyone
 
 ## Multi-Audience Access
 
-{% if for\_audience('internal', 'partner') %}
+{% if for_audience('internal', 'partner') %}
 !!! info "Advanced User Features"
 Shared with trusted users for advanced support:
 \- Slack access to engineers
@@ -64,7 +63,7 @@ Shared with trusted users for advanced support:
 \- Custom branding options
 {% endif %}
 
-{% if for\_audience('partner', 'beta') %}
+{% if for_audience('partner', 'beta') %}
 !!! warning "Early Access Features"
 Experimental tools available for early feedback:
 \- API v2.1
@@ -72,7 +71,7 @@ Experimental tools available for early feedback:
 \- Real-time integrations
 {% endif %}
 
-{% if for\_audience('internal', 'beta') %}
+{% if for_audience('internal', 'beta') %}
 !!! note "Testing Tools"
 Shared testing kits for performance & UX feedback.
 {% endif %}
@@ -83,19 +82,19 @@ Shared testing kits for performance & UX feedback.
 
 1. MFA with hardware tokens
 2. CDN integration
-3. Mobile app beta" | audience\_content("internal") }}
+3. Mobile app beta" | audience_content("internal") }}
 
 {{ "**Partner Checklist**
 
 * [ ] Webhooks verified
 * [ ] Billing configured
-* [ ] Go-live scheduled" | audience\_content("partner") }}
+* [ ] Go-live scheduled" | audience_content("partner") }}
 
 {{ "**Beta Testing Protocols**
 
 * Install in staging
 * Submit issues via Slack
-* Biweekly feedback calls" | audience\_content("beta") }}
+* Biweekly feedback calls" | audience_content("beta") }}
 
 ## Public API Example
 
@@ -107,7 +106,7 @@ fetch('https://api.company.com/v1/public/data', {
 })
 ```
 
-{% if is\_internal() %}
+{% if is_internal() %}
 
 ### Internal API Example
 
@@ -121,7 +120,7 @@ fetch('https://api-internal.company.com/v1/admin', {
 
 {% endif %}
 
-{% if is\_partner() %}
+{% if is_partner() %}
 
 ### Partner API Example
 
@@ -135,7 +134,7 @@ fetch('https://api.company.com/v1/partner/analytics', {
 
 {% endif %}
 
-{% if is\_beta() %}
+{% if is_beta() %}
 
 ### Beta API Example
 
