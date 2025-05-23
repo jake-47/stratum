@@ -159,7 +159,7 @@ fetch('https://api-beta.company.com/v2/ai-insights', {
 ```markdown
 {{ "**Roadmap:**\n- MFA\n- CDN\n- Mobile App" | audience_content("internal") }}
 ```
-{% endraw %}
+
 
 - **Pros:** Clean, short, great for inline or bullet list
 - **Cons:** Not ideal for nesting or complex blocks
@@ -167,11 +167,13 @@ fetch('https://api-beta.company.com/v2/ai-insights', {
 Both use `should_show_content()` behind the scenes — your logic is consistent no matter how you write it.
 
 Certainly. Here's a clear explanation you can include in your onboarding or documentation style guide:
-
----
+{% endraw %}
 
 ### How to Write About Jinja Syntax in Markdown
-When documenting how to use Jinja-style macros, filters, or variables—such as `{{ ... }}` or `{% if ... %}`—in Markdown, **you must always escape them** so they aren't rendered as actual template logic.
+{% raw %}
+When documenting how to use Jinja-style macros, filters, or variables—such as `{{ ... }}` or `{% if ... %}`—in Markdown, you must wrap those examples in `{% raw %}` and `{% endraw %}` tags. This prevents MkDocs from interpreting them as executable logic during the build process.
+{% endraw %}
+
 
 #### Why This Matters
 

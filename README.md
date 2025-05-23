@@ -17,6 +17,58 @@ It’s a way of saying:
 
 Stratum is ideal for teams who need clarity, maintainability, and layered access without sacrificing writing simplicity.
 
+## Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/jake-47/stratum.git
+cd stratum
+```
+
+### 2. Set Up a Virtual Environment (Recommended)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install .
+```
+
+This installs all dependencies listed in `pyproject.toml`, including `mkdocs`, `mkdocs-material`, macros, and any plugins used by Stratum.
+
+### 4. Generate Audience Configs
+
+```bash
+python generate_configs.py
+```
+
+This creates `mkdocs.public.yml`, `mkdocs.internal.yml`, `mkdocs.partner.yml`, and `mkdocs.beta.yml` based on audience logic.
+
+### 5. Run a Local Server
+
+Pick the audience config you want to preview:
+
+```bash
+mkdocs serve --open     # Public content
+mkdocs serve -f mkdocs.internal.yml   # Internal view
+mkdocs serve -f mkdocs.partner.yml    # Partner-only docs
+mkdocs serve -f mkdocs.beta.yml       # Beta feature set
+```
+
+### 6. Open in Browser
+Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+### 7. Make Changes
+* Content lives in `docs/`
+* Conditional content uses `{% if %}` macros or `{{ content | audience_content(...) }}` filters
+* Audience tags go in the frontmatter as:
+
+  ```yaml
+  audiences: internal, partner
+  ```
+
 ## Philosophy
 At its core, Stratum is committed to **minimal forking, maximum reuse**. Writers work in a unified Markdown corpus, embedding audience-specific content using simple, declarative logic. A developer building a CLI guide and a designer writing integration tips don’t need to worry about which file to use—there’s only one. The system handles visibility **surgically** at render time.
 
