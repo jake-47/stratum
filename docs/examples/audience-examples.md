@@ -165,3 +165,73 @@ fetch('https://api-beta.company.com/v2/ai-insights', {
 - **Cons:** Not ideal for nesting or complex blocks
 
 Both use `should_show_content()` behind the scenes — your logic is consistent no matter how you write it.
+
+Certainly. Here's a clear explanation you can include in your onboarding or documentation style guide:
+
+---
+
+### How to Write About Jinja Syntax in Markdown
+When documenting how to use Jinja-style macros, filters, or variables—such as `{{ ... }}` or `{% if ... %}`—in Markdown, **you must always escape them** so they aren't rendered as actual template logic.
+
+#### Why This Matters
+
+MkDocs (via `mkdocs-macros-plugin`) processes Jinja tags *before* rendering Markdown. If you include `{{ something }}` or `{% something %}` inline as an example, the plugin will try to **evaluate it as real logic**, which can lead to:
+
+* Errors like **“unexpected char”**
+* Content **vanishing** mysteriously
+* Pages **failing to build** altogether
+
+#### Solution: Use `{% raw %}` … `{% endraw %}`
+
+Wrap any Jinja examples in `{% raw %}` and `{% endraw %}`. This tells the macro processor to **treat the block as literal text** and leave it untouched.
+
+#### 📘 Examples
+
+##### Escaping Jinja in a Heading
+
+```markdown
+{% raw %}
+### Use `{{ content | audience_content("beta") }}`
+{% endraw %}
+```
+
+##### Escaping Jinja in a List Item
+
+```markdown
+{% raw %}
+- To show internal content, use `{% if is_internal() %} ... {% endif %}`
+{% endraw %}
+```
+
+##### Escaping Jinja in Code Blocks
+
+For full code examples, use triple backticks with `raw` inside:
+
+<pre>
+{% raw %}
+```
+{% if is_beta() %}
+!!! note "Beta-only content"
+{% endif %}
+```
+{% endraw %}
+</pre>
+
+#### Rule of Thumb
+
+> If you're *showing* Jinja to the reader (rather than *using* it), wrap it in `{% raw %}`.
+
+This applies to:
+
+* Inline filters: `{{ "value" | filter }}`
+* Conditionals: `{% if ... %}`
+* Macros: `{{ is_partner() }}`
+* Blocks: `{% for ... %} ... {% endfor %}`
+
+#### Edge Case: Nested Raw Blocks
+
+If you're already inside a `{% raw %}` block, don’t include a second `{% raw %}` inside it—**nesting will break** the rendering.
+
+---
+
+By following this rule, your instructional content will be safe, reliable, and easier for future writers to maintain.
