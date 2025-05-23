@@ -57,18 +57,6 @@ mkdocs serve -f mkdocs.partner.yml    # Partner-only docs
 mkdocs serve -f mkdocs.beta.yml       # Beta feature set
 ```
 
-### 6. Open in Browser
-Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
-### 7. Make Changes
-* Content lives in `docs/`
-* Conditional content uses `{% if %}` macros or `{{ content | audience_content(...) }}` filters
-* Audience tags go in the frontmatter as:
-
-  ```yaml
-  audiences: internal, partner
-  ```
-
 ## Philosophy
 At its core, Stratum is committed to **minimal forking, maximum reuse**. Writers work in a unified Markdown corpus, embedding audience-specific content using simple, declarative logic. A developer building a CLI guide and a designer writing integration tips don’t need to worry about which file to use—there’s only one. The system handles visibility **surgically** at render time.
 
