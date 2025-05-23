@@ -47,9 +47,7 @@ There is no need for non-technical contributors to learn Python or manipulate co
    Stratum’s architecture is designed for long-term maintainability. Updates are made once. Builds are automated. Docs stay in sync.
 
 ## Motivation
-I'm not a dev. I'm not a designer. I'm a technical writer, a documentation specialist, if you will. It would've been nice if there was a ready-made solution out there, but I couldn't find any framework or theme that fully supports multi-audience conditional builds with macro logic, config generators, and styled content wrappers. Companies like Google or Stripe build similar frameworks _in-house_ on top of static site generators (SSGs) like Docusaurus, Hugo, Sphinx, Next.js** (with custom MDX pipelines).  Stratum keeps you within MkDocs (fast, Markdown-native, great for non-devs), but doesn’t require multiple content trees. That’s its real advantage. So I used ChatGPT (OpenAI) and Claude (Anthropic) to build this. It [wasn't all fun](https://raw.githubusercontent.com/jake-47/stratum/main/assets/ai.mp4)!
-
-But man, *techmology*! 
+I'm not a dev. I'm not a designer. I'm a technical writer, a documentation specialist, if you will. It would've been nice if there was a ready-made solution out there, but I couldn't find any framework or theme that fully supports multi-audience conditional builds with macro logic, config generators, and styled content wrappers. Companies like Google or Stripe build similar frameworks _in-house_ on top of static site generators (SSGs) like Docusaurus, Hugo, Sphinx, Next.js** (with custom MDX pipelines). So, I used ChatGPT (OpenAI) and Claude (Anthropic) to keep the framework within MkDocs (fast, Markdown-native, great for non-devs). It [wasn't all fun](https://raw.githubusercontent.com/jake-47/stratum/blob/main/assets/ai.mp4)! But man, *techmology*! 
 
 I built Stratum for my needs. But feel free to clone it, fork it, modify it, and even sell it. And if you're inclined, I'd appreciate any contributions to make this better. Cheers!
 
