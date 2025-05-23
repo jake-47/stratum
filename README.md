@@ -1,7 +1,7 @@
 # Stratum
->A multi-audience documentation framework for a single source of truth
+>an elegant multi-audience documentation framework
 
-Stratum is built on [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme. There isn't much of difference an aesthetic upgrade, but It lets you serve multiple audiences—internal teams, partners, beta users, and the public—from one unified documentation base.
+Stratum is built on [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme. There isn't much of difference from an aesthetic angle, but it lets you serve multiple audiences—internal teams, partners, beta users, and the public — from one unified documentation base. Write documentation once, and serve different audiences (internal, partner, beta, public) with surgical precision using conditional macros and frontmatter tags.
 
 |Audience|Can See Content Marked As|
 |---|---|
@@ -10,14 +10,12 @@ Stratum is built on [MkDocs](https://www.mkdocs.org/) with the [Material for MkD
 |**Beta**|beta only|
 |**Public**|default content with no `audiences:` frontmatter (i.e. untagged)|
 
-- **Internal teams need full visibility** to support partners, test beta features, and manage docs.
-- **Partners and beta users must only see their authorized content**—which is your current behaviour.
-- **Public users should only see untagged general documentation**, to avoid leaks or confusion.
-- It ensures **audiences only expand access downward**, not upward.
+The reason for that logic:
+- Internal teams need full visibility to support partners, test beta features, and manage docs.
+- Partners and beta users must only see their authorized content.
+- Public users should only see untagged general documentation.
 
-Instead of duplicating files or running multiple sites, Stratum uses audience tags and conditional macros to selectively render content at build time. Writers work in Markdown. Visibility is determined by config and logic—not by duplication. Stratum moves away from multiple content trees. That’s its real advantage.
-
-It’s a way of saying: **“We care about who's reading, but we don’t want five versions of the truth.”**
+To prevent privacy leaks, confusion, and content drift, Stratum uses purpose-built automated builds—each precisely filtered and clearly labeled to ensure the right content reaches the right audience, every time. Instead of duplicating files or running multiple content trees, Stratum uses audience tags and conditional macros to selectively render content at build time. That’s its real advantage. Stratum's in a way of saying: **“We care about who's reading, but we don’t want five versions of the truth in ten different places.”**
 
 ## Core strengths
 - One set of Markdown files, many tailored outputs
@@ -145,7 +143,7 @@ Docusaurus, based on React, supports documentation, blogs, and landing pages. It
 While Confluence is widely used for internal wiki-style documentation, it struggles with versioning, custom styling, and development workflow integration. Pages are loosely connected, making structured navigation difficult. It’s not ideal for version-specific docs or developer-driven pipelines. MkDocs, by contrast, uses structured YAML navs, supports multiple output builds, and integrates with git, CI/CD, and custom preview deployments. With full theming control, offline portability, and negligible hosting costs, MkDocs offers more precision, flexibility, and sustainability for growing product teams.
 
 ## Motivation
-I'm not a dev. I'm not a designer. I'm a technical writer, a documentation specialist, if you will. It would've been nice if there was a ready-made solution out there, but I couldn't find any framework or theme that fully supports multi-audience conditional builds with macro logic, config generators, and styled content wrappers. Companies like Google or Stripe build similar frameworks _in-house_ on top of static site generators (SSGs) like Docusaurus, Hugo, Sphinx, Next.js** (with custom MDX pipelines). So, I used ChatGPT (OpenAI) and Claude (Anthropic) to keep the framework within MkDocs (fast, Markdown-native, great for non-devs). [It wasn't all fun](https://x.com/litteralyme0_/status/1925478490381722084)! But man, *techmology*! 
+I'm not a dev. I'm not a designer. I'm a technical writer, if you will, a documentation specialist. It would've been nice if there was a ready-made solution out there, but I couldn't find any framework or theme that fully supports multi-audience conditional builds with macro logic, config generators, and styled content wrappers. Companies like Google or Stripe build similar frameworks _in-house_ on top of static site generators (SSGs) like Docusaurus, Hugo, Sphinx, Next.js** (with custom MDX pipelines). So, I used ChatGPT (OpenAI) and Claude (Anthropic) to keep the framework within MkDocs (fast, Markdown-native, great for non-devs). [It wasn't all fun](https://x.com/litteralyme0_/status/1925478490381722084)! But man, *techmology*!
 
 I built Stratum for my needs. But feel free to clone it, fork it, modify it, and even sell it. And if you're inclined, I'd appreciate any contributions to make this better. Cheers!
 

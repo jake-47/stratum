@@ -1,4 +1,4 @@
-site_name: Stratum Knowledge Base
+site_name: Knowledge Base
 site_url: https://sitename.example
 theme:
   name: material
@@ -73,6 +73,7 @@ nav:
   - Deployment: reference-guide/deployment.md
 - Usage Guide:
   - Overview: usage-guide/overview.md
+  - Logo & Site Customisation: usage-guide/logo-site-customisation.md
   - Configuration: usage-guide/configuration.md
   - Installation: usage-guide/installation.md
 - Release Notes:
