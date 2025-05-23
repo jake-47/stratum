@@ -46,7 +46,7 @@ There is no need for non-technical contributors to learn Python or manipulate co
 7. **Operational Sustainability**
    Stratum’s architecture is designed for long-term maintainability. Updates are made once. Builds are automated. Docs stay in sync.
 
-# Why MkDocs
+## Why MkDocs
 MkDocs is a static site generator purpose-built for documentation. Written in Python, it provides a clean, efficient workflow for developers and writers alike. Unlike general-purpose tools like Jekyll or Docusaurus, MkDocs focuses on speed, simplicity, and structure—making it ideal for teams who want documentation that evolves with their code.
 
 ### Python-Friendly Workflow
